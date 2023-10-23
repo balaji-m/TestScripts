@@ -16,5 +16,5 @@ jobs:
         run: |
           ls
           echo "testing the workflow "
-          chmod +x ./scripts/testscript.sh
-          ./scripts/testscript.sh
+          chmod +x ./.github/workflows/scripts/testscript.sh
+          ./.github/workflows/scripts/testscript.sh
