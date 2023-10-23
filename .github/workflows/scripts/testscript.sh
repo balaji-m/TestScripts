@@ -24,8 +24,7 @@ fi
 # Validate the JSON error codes if enable_all is false
 if [ $(jq -r '.error_codes.enable_all' "$json_file") == "false" ]; then
     if jq -e '.error_codes.codes | all(. == 400 or . == 401 or . == 500)' "$json_file"; then
-        echo "JSON validation successful. It contains only allowed status codes (400, 401, 500)."
-        exit 0
+        echo "JSON validation successful. It contains only allowed status codes '400', '401', '500'."
     else
         echo "JSON validation failed. It contains disallowed status codes."
         exit 1
