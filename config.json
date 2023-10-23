@@ -1,0 +1,24 @@
+{
+    "email": [
+        "test1.gmail.com",
+        "test2.gmail.com"
+    ],
+    "error_codes": {
+        "codes": [
+            400,
+            401,
+            500
+        ],
+        "trigger": 60,
+        "enable_all": true
+    },
+    "business_alerts": [
+        {
+            "name": "tst",
+            "desc": "desc1",
+            "search_term": "test",
+            "trigger": 60
+        }
+    ],
+    "splunk_index": "test index"
+}
