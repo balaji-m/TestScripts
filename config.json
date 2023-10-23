@@ -10,7 +10,7 @@
             500
         ],
         "trigger": 60,
-        "enable_all": true
+        "enable_all": false
     },
     "business_alerts": [
         {
