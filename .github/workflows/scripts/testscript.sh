@@ -36,5 +36,4 @@ fi
 # Check if the business alerts array has a specific size (e.g., 1)
 if [ $(jq -r '.business_alerts | length' "$json_file") -ne 0 ]; then
     echo "Business alerts present."
-    exit 0
 fi
