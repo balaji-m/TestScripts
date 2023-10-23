@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: 'BalajiScript'
         run: |
+          ls
           echo "testing the workflow "
           chmod +x ./scripts/testscript.sh
           ./scripts/testscript.sh
