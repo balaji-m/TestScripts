@@ -1,4 +1,4 @@
-name: Node.js CI
+name: balajiworkflow
 
 on:
   workflow_dispatch:
