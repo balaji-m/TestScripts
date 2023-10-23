@@ -16,3 +16,4 @@ jobs:
       - name: 'BalajiScript'
         run: |
           echo "testing the workflow "
+          ./scripts/testscript.sh
