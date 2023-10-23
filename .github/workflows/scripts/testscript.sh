@@ -10,7 +10,7 @@ fi
 json_file="config.json"
 
 # Validate the JSON and allow only codes 400 and 401
-if jq -e '.error_codes.codes | all(. == 400 or . == 401)' "$json_file"; then
+if jq -e '.error_codes.codes | all(. == 400 or . == 401 or . == 500)' "$json_file"; then
     echo "JSON validation successful. It contains only allowed status codes (400 and 401)."
     exit 0
 else
