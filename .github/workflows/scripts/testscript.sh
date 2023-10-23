@@ -32,9 +32,4 @@ if [ $(jq -r '.error_codes.enable_all' "$json_file") == "false" ]; then
 else
     echo "JSON validation skipped for error codes. enable_all is set to true."
 fi
-
-# # Check if the business alerts array has a specific size (e.g., 1)
-# if [ $(jq -r '.business_alerts | length' "$json_file") -ne 0 ]; then
-#     echo "Business alerts present"
-# fi
-# exit 0
+exit 0
