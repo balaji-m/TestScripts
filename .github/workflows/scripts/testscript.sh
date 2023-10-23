@@ -13,12 +13,10 @@ json_file="config.json"
 if [ $(jq -r '.error_codes.enable_all' "$json_file") == "false" ]; then
     if jq -e '.error_codes.codes | all(. == 400 or . == 401 or . == 500)' "$json_file"; then
         echo "JSON validation successful. It contains only allowed status codes (400 and 401 and 500)."
-        exit 0
     else
         echo "JSON validation failed. It contains disallowed status codes."
         exit 1
     fi
 else
     echo "JSON validation skipped for error codes. enable_all is set to true."
-    exit 0
 fi
