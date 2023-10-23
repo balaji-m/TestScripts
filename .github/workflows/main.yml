@@ -16,4 +16,5 @@ jobs:
       - name: 'BalajiScript'
         run: |
           echo "testing the workflow "
+          chmod +x ./scripts/testscript.sh
           ./scripts/testscript.sh
