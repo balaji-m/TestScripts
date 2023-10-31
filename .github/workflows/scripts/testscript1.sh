@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if jq is installed
-var1="test"
-var2="value"
-var3="$test $var2 status code"
-echo "$var3"
+sudo snap install yq
+
+# Update the reponame in the YAML file
+yq eval '.repometadata.reponame = "qarepo"' -i asset.yml
