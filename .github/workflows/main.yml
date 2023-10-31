@@ -18,3 +18,10 @@ jobs:
           echo "testing the workflow "
           chmod +x ./.github/workflows/scripts/testscript1.sh
           ./.github/workflows/scripts/testscript1.sh
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "balaji.m89@gmail.com"
+          git add asset.yml
+          git commit -m "Update reponame to qarepo"
+          git push
