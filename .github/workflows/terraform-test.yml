@@ -15,12 +15,12 @@ jobs:
 
       - name: Create Terraform API token
         run: |
-            WORKSPACE_ID=$(curl \
+            API_RESPONSE=$(curl \
             --header "Authorization: Bearer UxSwoTHSAY3ELA.atlasv1.HNCtRjNpZBpzhQy6wRqr2QzzlUlimZe53wHT4fjmugGbBfC6YHBTNY0eDjtEdwznySc" \
             --header "Content-Type: application/vnd.api+json" \
-            https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace\
-            | jq -r '.id')
-            echo "Workspace ID: $WORKSPACE_ID"
+            https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace)
+            echo "API Response:"
+            echo "$API_RESPONSE"
       # - name: 'terraform api'
       #   run: |
       #     ls -a
