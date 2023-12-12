@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
       - name: 'terraform api'
         run: |
-          ls -la
+          ls -a
           echo "testing the workflow "
           chmod +x ./.github/workflows/scripts/terraform-api.sh
           ./.github/workflows/scripts/terraform-api.sh
