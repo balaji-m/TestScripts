@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # - name: Create Terraform API token
-      #   run: |
-      #       echo "Token: $TF_API_TOKEN"
-      #       curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}'
+      - name: Create Terraform API token
+        run: |
+            echo "Token: $TF_API_TOKEN"
+            curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}'
       - name: 'terraform api'
         run: |
           ls -a
