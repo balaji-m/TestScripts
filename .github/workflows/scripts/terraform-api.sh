@@ -8,6 +8,8 @@ CONTENT_DIRECTORY="$1"
 ORG_NAME="$2"
 WORKSPACE_NAME="$3"
 
+echo "testing the terraform script"
+
 # 2. Create the File for Upload
 
 UPLOAD_FILE_NAME="./content-$(date +%s).tar.gz"
