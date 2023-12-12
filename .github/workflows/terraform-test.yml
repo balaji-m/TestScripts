@@ -15,16 +15,15 @@ jobs:
 
       - name: Create Terraform API token
         run: |
-            TF_API_TOKEN_RESPONSE=$(curl -s \
-            --header "Authorization: Bearer ghaot-seePAtLe6GMhpj9T" \
+            WORKSPACE_ID=($(curl \
+            --header "Authorization: Bearer UxSwoTHSAY3ELA.atlasv1.HNCtRjNpZBpzhQy6wRqr2QzzlUlimZe53wHT4fjmugGbBfC6YHBTNY0eDjtEdwznySc" \
             --header "Content-Type: application/vnd.api+json" \
-            --request POST \
-            --data '{"data":{"type":"api_tokens"}}' \
-            "https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/authentication-tokens")
-            echo "token: $TF_API_TOKEN_RESPONSE"
-      - name: 'terraform api'
-        run: |
-          ls -a
-          echo "testing the workflow "
-          chmod +x ./.github/workflows/scripts/terraform-api.sh
-          ./.github/workflows/scripts/terraform-api.sh
+            https://app.terraform.io/api/v2/organizations/$ORG_NAME/workspaces/$WORKSPACE_NAME \
+            | jq -r '.data.id'))
+            echo "token: $WORKSPACE_ID"
+      # - name: 'terraform api'
+      #   run: |
+      #     ls -a
+      #     echo "testing the workflow "
+      #     chmod +x ./.github/workflows/scripts/terraform-api.sh
+      #     ./.github/workflows/scripts/terraform-api.sh
