@@ -7,7 +7,7 @@
 CONTENT_DIRECTORY="tf"
 ORG_NAME="MyFirstOrg-BalajiM"
 WORKSPACE_NAME="MyFirstWorkspace"
-TOKEN="p6aFQ0i0LAixCA.atlasv1.Tzil6dnKRyhUatyVbjUw1Qoc0VFyAyc3jnpUcadBLSNgcdSFs5OWZIWaonTzOi0fqnM"
+TOKEN="xHKnrb1FyMCuXA.atlasv1.MNKWygZZW4oJtw70d0qRmpnVwRf2Ge8a5R1QznkryRzerpdCWgbfRIWvvcrldhsUTTk"
 
 echo "testing the terraform script"
 
