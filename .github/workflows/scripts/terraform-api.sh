@@ -20,7 +20,7 @@ echo "step2 completed: $UPLOAD_FILE_NAME"
 # 3. Look Up the Workspace ID
 
 WORKSPACE_ID=($(curl \
-  --header "Authorization: Bearer ${{ secrets.TF_API_TOKEN }}" \
+  --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}' \
   --header "Content-Type: application/vnd.api+json" \
   https://app.terraform.io/api/v2/organizations/$ORG_NAME/workspaces/$WORKSPACE_NAME \
   | jq -r '.data.id'))
