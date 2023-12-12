@@ -16,12 +16,7 @@ jobs:
       - name: Create Terraform API token
         run: |
             echo "Token: $TF_API_TOKEN"
-            API_RESPONSE=$(curl -v \
-            --header "Authorization: Bearer $TF_API_TOKEN" \
-            --header "Content-Type: application/vnd.api+json" \
-            https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace)
-            echo "API Response:"
-            echo "$API_RESPONSE"
+            curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer uFwwF46rkzf1ew.atlasv1.PyuantFhxDNEh7YC3PT7IXlfTNVue44jpKTEL4wDcYyj9dOtIAb8HAzhCfQ6ldFgL4E'
       # - name: 'terraform api'
       #   run: |
       #     ls -a
