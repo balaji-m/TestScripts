@@ -25,6 +25,8 @@ WORKSPACE_ID=($(curl \
   https://app.terraform.io/api/v2/organizations/$ORG_NAME/workspaces/$WORKSPACE_NAME \
   | jq -r '.data.id'))
 
+echo "step3 completed: $WORKSPACE_ID"
+
 # # 4. Create a New Configuration Version
 
 echo '{"data":{"type":"configuration-versions"}}' > ./create_config_version.json
