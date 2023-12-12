@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Create Terraform API token
+        run: |
+            TF_API_TOKEN_RESPONSE=$(curl -s \
+            --header "Authorization: Bearer ghaot-seePAtLe6GMhpj9T" \
+            --header "Content-Type: application/vnd.api+json" \
+            --request POST \
+            --data '{"data":{"type":"api_tokens"}}' \
+            "https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/authentication-tokens")
+            echo "token: $TF_API_TOKEN_RESPONSE"
       - name: 'terraform api'
         run: |
           ls -a
