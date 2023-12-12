@@ -19,8 +19,7 @@ echo "step2 completed: $UPLOAD_FILE_NAME"
 
 # 3. Look Up the Workspace ID
 
-WORKSPACE_ID=curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}'
-
+WORKSPACE_ID=$(curl -k -X GET 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' -H 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}')
 echo "step3 completed: $WORKSPACE_ID"
 
 # # 4. Create a New Configuration Version
