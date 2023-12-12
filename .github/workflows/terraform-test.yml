@@ -1,0 +1,20 @@
+name: terraform-workflow-test
+
+on:
+  workflow_dispatch:
+ 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: 'terraform api'
+        run: |
+          ls
+          echo "testing the workflow "
+          chmod +x ./.github/workflows/scripts/testscript1.sh
+          ./.github/workflows/scripts/testscript1.sh
