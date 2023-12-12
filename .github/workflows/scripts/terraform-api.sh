@@ -4,9 +4,10 @@
 
 # 1. Define Variables
 
-CONTENT_DIRECTORY="$1"
-ORG_NAME="$2"
-WORKSPACE_NAME="$3"
+CONTENT_DIRECTORY="ts"
+ORG_NAME="MyFirstOrg-BalajiM"
+WORKSPACE_NAME="MyFirstWorkspace"
+TOKEN="p6aFQ0i0LAixCA.atlasv1.Tzil6dnKRyhUatyVbjUw1Qoc0VFyAyc3jnpUcadBLSNgcdSFs5OWZIWaonTzOi0fqnM"
 
 echo "testing the terraform script"
 
