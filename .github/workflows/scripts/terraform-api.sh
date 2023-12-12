@@ -16,6 +16,8 @@ echo "testing the terraform script"
 UPLOAD_FILE_NAME="./content-$(date +%s).tar.gz"
 tar -zcvf "$UPLOAD_FILE_NAME" -C "$CONTENT_DIRECTORY" .
 
+echo "step2 completed"
+
 # 3. Look Up the Workspace ID
 
 WORKSPACE_ID=($(curl \
@@ -23,6 +25,8 @@ WORKSPACE_ID=($(curl \
   --header "Content-Type: application/vnd.api+json" \
   https://app.terraform.io/api/v2/organizations/$ORG_NAME/workspaces/$WORKSPACE_NAME \
   | jq -r '.data.id'))
+
+echo "step3 completed"
 
 # 4. Create a New Configuration Version
 
@@ -36,6 +40,8 @@ UPLOAD_URL=($(curl \
   https://app.terraform.io/api/v2/workspaces/$WORKSPACE_ID/configuration-versions \
   | jq -r '.data.attributes."upload-url"'))
 
+  echo "step4 completed"
+
 # 5. Upload the Configuration Content File
 
 curl \
@@ -43,6 +49,8 @@ curl \
   --request PUT \
   --data-binary @"$UPLOAD_FILE_NAME" \
   $UPLOAD_URL
+
+ echo "step5 completed"
 
 # 6. Delete Temporary Files
 
