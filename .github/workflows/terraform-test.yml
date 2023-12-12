@@ -22,4 +22,4 @@ jobs:
           ls -a
           echo "testing the workflow "
           chmod +x ./.github/workflows/scripts/terraform-api.sh
-          ./.github/workflows/scripts/terraform-api.sh
+          ./.github/workflows/scripts/terraform-api.sh ${{ secrets.TF_API_TOKEN }}
