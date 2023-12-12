@@ -7,7 +7,6 @@
 CONTENT_DIRECTORY="tf"
 ORG_NAME="MyFirstOrg-BalajiM"
 WORKSPACE_NAME="MyFirstWorkspace"
-TOKEN="P4MmdCsZ9KHRnQ.atlasv1.KSc8wt3zmp3M2zkV8vGfhRqQyJ26O329xt0rdN1bi0ylHJwAiTtBqtUtXg9HmdJlDyY"
 
 echo "testing the terraform script"
 
@@ -21,7 +20,7 @@ echo "step2 completed: $UPLOAD_FILE_NAME"
 # 3. Look Up the Workspace ID
 
 WORKSPACE_ID=($(curl \
-  --header "Authorization: Bearer $TOKEN" \
+  --header "Authorization: Bearer ${{ secrets.TF_API_TOKEN }}" \
   --header "Content-Type: application/vnd.api+json" \
   https://app.terraform.io/api/v2/organizations/$ORG_NAME/workspaces/$WORKSPACE_NAME \
   | jq -r '.data.id'))
