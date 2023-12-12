@@ -16,7 +16,8 @@ jobs:
       - name: Create Terraform API token
         run: |
             echo "Token: $TF_API_TOKEN"
-            curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}'
+            workspaceId=$(curl --location 'https://app.terraform.io/api/v2/organizations/MyFirstOrg-BalajiM/workspaces/MyFirstWorkspace' --header 'Authorization: Bearer ${{ secrets.TF_API_TOKEN }}')
+            echo "$workspaceId"
       - name: 'terraform api'
         run: |
           ls -a
