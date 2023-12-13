@@ -6,7 +6,7 @@
 tf_api_token=$1
 CONTENT_DIRECTORY="tf"
 ORG_NAME="MyFirstOrg-BalajiM"
-WORKSPACE_NAME="MyFirstWorkspace"
+WORKSPACE_NAME="MyAPIWorkspace"
 
 echo "testing the terraform script"
 
