@@ -26,6 +26,7 @@ jobs:
       - name: change directory
         run: |
            cd tf
+           ls -a
 
       - name: terraform initialization
         id: init
