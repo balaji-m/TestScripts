@@ -1,0 +1,35 @@
+name: terraform-workflow-test
+
+on:
+  workflow_dispatch:
+ 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: terraform cli
+        uses: hashicorp/setup-terraform@v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+          terraform_wrapper: false
+
+      - name: terraform initialization
+        id: init
+        run: |
+          terraform init
+
+      - name: terraform plan 
+        id: plan
+        run: |
+          terraform plan -no-color
+        
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+       
