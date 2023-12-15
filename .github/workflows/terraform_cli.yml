@@ -33,10 +33,12 @@ jobs:
       - name: terraform plan 
         id: plan
         run: |
+          cd tf
           terraform plan
         
       - name: Terraform Validate
         id: validate
         run: |
+          cd tf
           terraform validate
        
