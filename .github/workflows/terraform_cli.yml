@@ -21,18 +21,15 @@ jobs:
 
       - name: list files
         run: |
-           ls -a
+           ls -a       
            
-      - name: change directory
-        run: |
-           cd tf
-           ls -a
-
       - name: terraform initialization
         id: init
         run: |
+          cd tf
+          ls
           terraform init
-
+          
       - name: terraform plan 
         id: plan
         run: |
