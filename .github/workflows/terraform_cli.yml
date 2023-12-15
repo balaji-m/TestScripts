@@ -1,4 +1,4 @@
-name: terraform-workflow-test
+name: terraform-cli-workflow-test
 
 on:
   workflow_dispatch:
